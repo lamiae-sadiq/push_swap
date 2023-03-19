@@ -26,7 +26,7 @@ bool		check_int(char *str)
 	is_int = true;
 	while(str[i])
 	{
-		 if (str[i] == '-' && j == 0)
+		 if ((str[i] == '-' || str[i] == '+') && j == 0)
 			j++;
 		else if(!(str[i] >= '0' && str[i] <= '9'))
 		{
@@ -76,11 +76,9 @@ int	check_double(char **str)
 int main(int argc, char **argv)
 {
 	int i;
-	int j;
 	int cm;
 
 	i = 1;
-	j = 0;
 	if(argc > 2)
 	{
 		while(argv[i])

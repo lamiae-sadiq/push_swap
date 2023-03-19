@@ -1,31 +1,13 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: lsadiq <lsadiq@student.42.fr>              +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/03/03 02:27:46 by lsadiq            #+#    #+#              #
-#    Updated: 2023/03/03 02:28:09 by lsadiq           ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME	=	push_swap
-SRCS	=	main.c 
+SRCS	=	init_stacks.c
 
 OBJS	=	$(SRCS:.c=.o)
-
+BOBJS	=	$(BSRCS:.c=.o)
 CC		=	cc
 
-CFLAGS 	= 	-Wall -Wextra -Werror 
+CFLAGS 	= 	-Wall -Wextra -Werror
 
 AR 		= ar rc
-
-
-LINKS = \
-    -I /usr/local/include -L /usr/local/lib \
-     -lmlx -framework OpenGL -framework AppKit
-
 
 LIBFT = libft/libft.a
 
@@ -43,22 +25,30 @@ all		:	$(NAME)
 
 $(NAME)	: 	 $(LIBFT) $(OBJS)
 			@echo $(GREEN) "Compiling $(NAME)..." $(NONE)
-			@$(CC) $(CFLAGS) $(LINKS) $(OBJS) libft/libft.a -o $(NAME)
+			@$(CC) $(CFLAGS) $(OBJS) libft/libft.a -o $(NAME)
 			@echo $(GREEN) "\n ~ Compiled !!" $(NONE)
 
 $(LIBFT) :
 			@echo $(GREEN) "Compiling libft..." $(NONE)
 			@make -C libft/
+			@make bonus -C libft/
 
+bonus :		$(LIBFT) $(BOBJS)
+			@echo $(GREEN) "Compiling $(NAME)..." $(NONE)
+			@$(CC) $(CFLAGS) $(BOBJS) libft/libft.a -o $(NAME)
+			@echo $(GREEN)"- Compiled -"$(NONE)
+ 
 clean	:
 			@echo $(RED) "Removing libft..." $(NONE)
 			@make clean -C libft/
+			@make clean -C libft/
 			@echo $(RED) "Removing object files..." $(NONE)
-			@rm -rf $(OBJS)
+			@rm -rf $(OBJS) $(BOBJS)
 
 fclean	:	clean
 			@echo $(RED) "Removing $(NAME)..." $(NONE)
 			@rm -f $(NAME) $(NAME)
 			@rm -rf libft/libft.a
+
 
 re		:	fclean $(NAME)

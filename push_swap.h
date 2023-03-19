@@ -23,9 +23,10 @@
 
 typedef struct s_push
 {
-	int	i;
-	int	j;
-	char	*str;	
+	struct s_push  *next;
+	int num;
+	int count;
+
 }t_push;
 
 #endif
