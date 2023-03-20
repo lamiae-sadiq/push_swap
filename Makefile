@@ -1,5 +1,5 @@
 NAME	=	push_swap
-SRCS	=	init_stacks.c
+SRCS	=	init_stacks.c stack_utils.c main.c
 
 OBJS	=	$(SRCS:.c=.o)
 BOBJS	=	$(BSRCS:.c=.o)

@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   moves.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsadiq <lsadiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/04 00:58:23 by lsadiq            #+#    #+#             */
-/*   Updated: 2023/03/20 20:49:23 by lsadiq           ###   ########.fr       */
+/*   Created: 2023/03/19 10:35:10 by lsadiq            #+#    #+#             */
+/*   Updated: 2023/03/19 10:37:17 by lsadiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "push_swap.h"
 
-int	ft_lstsize(t_list *lst)
+t_push  move_sa(t_push *move)
 {
-	int	size;
-
-	size = 0;
-	while (lst)
-	{
-		lst = lst->next;
-		size++;
-	}
-	return (size);
+    int i;
+    
+    
 }

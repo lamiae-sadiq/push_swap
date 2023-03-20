@@ -6,7 +6,7 @@
 /*   By: lsadiq <lsadiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 22:08:35 by lsadiq            #+#    #+#             */
-/*   Updated: 2023/03/09 15:15:07 by lsadiq           ###   ########.fr       */
+/*   Updated: 2023/03/20 20:41:14 by lsadiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,26 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-//check the sign
-bool		check_int(char *str)
+bool		check_int(char **av)
 {
 	bool	is_int;
 	int		i;
 	int 	j;
+	int		k;
 
-	i = 0;
+	i = 1;
 	j = 0;
 	is_int = true;
-	while(str[i])
+	while(av[i])
 	{
-		 if ((str[i] == '-' || str[i] == '+') && j == 0)
-			j++;
-		else if(!(str[i] >= '0' && str[i] <= '9'))
+		k = 0;
+		while(av[i][k])
 		{
-				is_int = false;
+			 if ((av[i][k] == '-' || av[i][k] == '+') && j == 0)
+				j++;
+			else if(!(av[i][k] >= '0' && av[i][k] <= '9'))
+					is_int = false;
+			k++;
 		}
 		i++;
 	}
@@ -53,42 +56,13 @@ int	ft_strcmp(char *s1, char *s2)
 	return (s1[i] - s2[i]);
 }
 
-int	check_double(char **str)
+int	check_double(t_push *av)
 {
-	int i;
-	int j;
-
-	i = 0;
-	while(str[i])
-	{
-		j = i + 1;
-		while (str[j])
-		{
-			if (!ft_strcmp(str[j], str[i]))
-				return(0);
-			j++;
-		}
-		i++; 
-	}
+	// holder next node  
+	// check if current node num == holder num
+	// increment holder to the next
+		if(av->num == av->next->num)
+			return(0);
+		av->num++;
 	return(1);
-}
-
-int main(int argc, char **argv)
-{
-	int i;
-	int cm;
-
-	i = 1;
-	if(argc > 2)
-	{
-		while(argv[i])
-		{
-			cm = check_int(&argv[i][0]);
-			if(cm == 0 || check_double(&argv[i]) == 0){
-				printf("weirdo\n");
-				break;
-			}
-			i++;
-		}
-	}
 }
