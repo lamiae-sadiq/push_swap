@@ -6,7 +6,7 @@
 /*   By: lsadiq <lsadiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 22:08:35 by lsadiq            #+#    #+#             */
-/*   Updated: 2023/03/20 20:41:14 by lsadiq           ###   ########.fr       */
+/*   Updated: 2023/03/21 11:36:48 by lsadiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,21 @@ int	ft_strcmp(char *s1, char *s2)
 
 int	check_double(t_push *av)
 {
-	// holder next node  
-	// check if current node num == holder num
-	// increment holder to the next
-		if(av->num == av->next->num)
-			return(0);
-		av->num++;
+	t_push *holder;
+	t_push *cmp;
+
+	
+	holder = av;
+	while (holder)
+	{
+		cmp = holder->next;
+		while(cmp)
+		{
+			if(holder->num == cmp->num)
+				return(0);
+			cmp = cmp->next;
+		}
+		holder = holder->next;
+	}
 	return(1);
 }

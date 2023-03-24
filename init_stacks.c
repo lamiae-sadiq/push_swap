@@ -15,7 +15,7 @@ void	fill_stack(int ac, char **av, t_push **stack)
 int main(int ac, char **av)
 {
 	t_push	*stack_a;
-	t_push *stack_b;
+	t_push	*stack_b;
 	int cm;
 
 	if(ac > 2)
@@ -27,11 +27,20 @@ int main(int ac, char **av)
 			exit(1);
 		}
 		stack_a = NULL;
+		stack_b = NULL;
 		fill_stack(ac, av, &stack_a);
+		if(check_double(stack_a) == 0)
+		{
+			printf("Input contains duplicate values\n");
+			exit(1);
+		}
+		// move_sa(stack_a, 1);
+		// swapFirstLast(stack_a);
+		firstlast(stack_a);
 		printf("a\tb\n");
 		while (stack_a || stack_b)
 		{
-			if(stack_a)
+			if (stack_a)
 			{
 				printf("%d", stack_a->num);
 				stack_a = stack_a->next;
@@ -45,10 +54,5 @@ int main(int ac, char **av)
 			}
 		}
 		printf("--      --\n");
-		if(check_double(stack_a) == 0)
-		{
-			printf("mook\n");
-			exit(1);
-		}
 	}
 }
