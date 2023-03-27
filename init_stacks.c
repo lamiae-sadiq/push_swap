@@ -34,25 +34,30 @@ int main(int ac, char **av)
 			printf("Input contains duplicate values\n");
 			exit(1);
 		}
-		// move_sa(stack_a, 1);
-		// swapFirstLast(stack_a);
-		firstlast(stack_a);
+		if(check_sort(&stack_a) == 1)
+		{
+			printf("is sorted !\n");
+			exit(1);
+		}
 		printf("a\tb\n");
-		while (stack_a || stack_b)
+		while (stack_a)
 		{
 			if (stack_a)
 			{
 				printf("%d", stack_a->num);
 				stack_a = stack_a->next;
-				printf("\n");
+				if (!stack_b)
+					printf("\n");
 			}
 			if (stack_b)
 			{
+				printf ("\t");
 			    printf("%d", stack_b->num);
 			    stack_b = stack_b->next;
 				printf("\t\n");
 			}
 		}
 		printf("--      --\n");
+
 	}
 }
