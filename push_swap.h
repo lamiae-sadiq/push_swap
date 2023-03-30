@@ -6,7 +6,7 @@
 /*   By: lsadiq <lsadiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 01:14:35 by lsadiq            #+#    #+#             */
-/*   Updated: 2023/03/27 21:38:58 by lsadiq           ###   ########.fr       */
+/*   Updated: 2023/03/30 00:39:25 by lsadiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,6 @@ void    move_rrr(t_push **stack1, t_push **stack2);
 void    move_pb(t_push **stack1, t_push **stack2);
 void	move_pa(t_push **stack_b, t_push **stack_a);
 int 	check_sort(t_push **stack);
+void	sort_three(t_push **stack);
 
 #endif

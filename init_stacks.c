@@ -39,6 +39,11 @@ int main(int ac, char **av)
 			printf("is sorted !\n");
 			exit(1);
 		}
+		if(ac == 4)
+		{
+			sort_three(&stack_a);
+			printf("DONE\n");
+		}
 		printf("a\tb\n");
 		while (stack_a)
 		{
