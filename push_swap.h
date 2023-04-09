@@ -6,7 +6,7 @@
 /*   By: lsadiq <lsadiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 01:14:35 by lsadiq            #+#    #+#             */
-/*   Updated: 2023/03/30 00:39:25 by lsadiq           ###   ########.fr       */
+/*   Updated: 2023/04/09 08:01:58 by lsadiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_push
 {
 	struct s_push  *next;
 	int num;
+	int index;
 }t_push;
 
 typedef struct s_swap
@@ -34,8 +35,6 @@ typedef struct s_swap
 }t_swap;
 
 t_push	*ft_stacklast(t_push *lst);
-void	move_sa(t_push **stack, int flag);
-void	move_sb(t_push **stack, int flag);
 void	swap(t_push *stack);
 t_push	*ft_stacknew(int content);
 void	ft_stackadd_back(t_push **lst, t_push *new);
@@ -45,15 +44,30 @@ bool	check_int(char **str);
 void	lastfirst(t_push **head);
 void	firstlast(t_push *stack);
 void	push(t_push *stack1, t_push *stack2);
-void	move_rb(t_push **stack);
+void	move_sa(t_push **stack, int flag);
+void	move_sb(t_push **stack, int flag);
 void	move_ra(t_push **stack);
+void	move_rb(t_push **stack);
 void	move_rr(t_push **stack1, t_push **stack2);
 void    move_rra(t_push **stack);
 void    move_rrb(t_push **stack);
 void    move_rrr(t_push **stack1, t_push **stack2);
-void    move_pb(t_push **stack1, t_push **stack2);
 void	move_pa(t_push **stack_b, t_push **stack_a);
+void    move_pb(t_push **stack1, t_push **stack2);
 int 	check_sort(t_push **stack);
 void	sort_three(t_push **stack);
+int		find_smallest(t_push **stack);
+void	sort_four(t_push **stack1, t_push **stack2);
+void	sort_five(t_push **stack1, t_push **stack2);
+void	sorting(t_push **stack1, t_push **stack2, int ac);
+int		ft_lstsizee(t_push **stack);
+void    stack_to_arr(t_push **stack, int *array);
+void    sort_arr(int *arr, int size);
+int		sorted_arr(int *a);
+void    sort_big_numbers(t_push **stack1, t_push **stack2, int *arr);
+void    move_to_stack_b(t_push **stack1, t_push **stack2, int size, int chunk);
+void	ft_assign_index(t_push **stack, int *arr, int size);
+void	ft_assignn_index(t_push **lst, int *arr);
+void    back_to_a(t_push **stack1, t_push **stack2, int size);
 
 #endif

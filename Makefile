@@ -1,11 +1,11 @@
 NAME	=	push_swap
-SRCS	=	init_stacks.c stack_utils.c main.c moves.c swap.c rotate.c rev_rot.c push.c sort.c
+SRCS	=	init_stacks.c stack_utils.c main.c moves.c swap.c rotate.c rev_rot.c push.c sort.c big_numbers.c
 
 OBJS	=	$(SRCS:.c=.o)
 BOBJS	=	$(BSRCS:.c=.o)
 CC		=	cc
 
-CFLAGS 	= 	-Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS 	= 	-Wall -Wextra -Werror -fsanitize=address -g3
 
 AR 		= ar rc
 

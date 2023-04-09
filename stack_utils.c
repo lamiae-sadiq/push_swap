@@ -6,7 +6,7 @@
 /*   By: lsadiq <lsadiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 08:23:30 by lsadiq            #+#    #+#             */
-/*   Updated: 2023/03/21 15:43:01 by lsadiq           ###   ########.fr       */
+/*   Updated: 2023/04/04 07:06:51 by lsadiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ void	ft_stackadd_back(t_push **lst, t_push *new)
 			p->next = new;
 		}
 		else
+		{
 			*lst = new;
+		}
 	}
 }
 
@@ -43,20 +45,23 @@ t_push	*ft_stacknew(int content)
 	if (!new)
 		return (NULL);
 	new->num = content;
-    // new->count = 0;
 	new->next = NULL;
 	return (new);
 }
 
-int	ft_lstsize(t_list *lst)
+int	ft_lstsizee(t_push **stack)
 {
-	int	size;
+	t_push	*cur;
+	int			size;
 
+	cur = *stack;
 	size = 0;
-	while (lst)
+	if (!(*stack))
+		return (0);
+	while (cur)
 	{
-		lst = lst->next;
 		size++;
+		cur = cur->next;
 	}
 	return (size);
 }

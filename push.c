@@ -6,7 +6,7 @@
 /*   By: lsadiq <lsadiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 01:49:38 by lsadiq            #+#    #+#             */
-/*   Updated: 2023/03/26 16:46:01 by lsadiq           ###   ########.fr       */
+/*   Updated: 2023/04/08 00:09:12 by lsadiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void    move_pb(t_push **stack1, t_push **stack2)
     *stack1 = (*stack1)->next;
     head->next = *stack2;
     *stack2 = head;
+    printf("pb\n");
 }
 
 void    move_pa(t_push **stack1, t_push **stack2)
@@ -31,6 +32,7 @@ void    move_pa(t_push **stack1, t_push **stack2)
     *stack1 = (*stack1)->next;
     head->next = *stack2;
     *stack2 = head;
+    printf("pa\n");
 }
 
 // void    move_pb(t_push **stack1, t_push **stack2)
