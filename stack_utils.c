@@ -6,7 +6,7 @@
 /*   By: lsadiq <lsadiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 08:23:30 by lsadiq            #+#    #+#             */
-/*   Updated: 2023/04/04 07:06:51 by lsadiq           ###   ########.fr       */
+/*   Updated: 2023/04/11 21:40:12 by lsadiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ t_push	*ft_stacknew(int content)
 int	ft_lstsizee(t_push **stack)
 {
 	t_push	*cur;
-	int			size;
+	int		size;
 
 	cur = *stack;
 	size = 0;

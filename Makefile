@@ -1,11 +1,13 @@
 NAME	=	push_swap
-SRCS	=	init_stacks.c stack_utils.c main.c moves.c swap.c rotate.c rev_rot.c push.c sort.c big_numbers.c
+BONUS_NAME	= 	checker_me
+SRCS	=	push_swap.c stack_utils.c check_int.c small_sort.c swap.c rotate.c rev_rot.c push.c sort.c big_numbers.c cnv_stack.c
+BSRCS	= 	checker.c get_next_line.c get_next_line_utils.c stack_utils.c check_int.c small_sort.c swap.c rotate.c rev_rot.c push.c sort.c big_numbers.c cnv_stack.c
 
 OBJS	=	$(SRCS:.c=.o)
 BOBJS	=	$(BSRCS:.c=.o)
 CC		=	cc
 
-CFLAGS 	= 	-Wall -Wextra -Werror -fsanitize=address -g3
+CFLAGS 	= 	-Wall -Wextra -Werror #-fsanitize=address -g3
 
 AR 		= ar rc
 
@@ -35,9 +37,8 @@ $(LIBFT) :
 
 bonus :		$(LIBFT) $(BOBJS)
 			@echo $(GREEN) "Compiling $(NAME)..." $(NONE)
-			@$(CC) $(CFLAGS) $(BOBJS) libft/libft.a -o $(NAME)
+			@$(CC) $(CFLAGS) $(BOBJS) libft/libft.a -o $(BONUS_NAME)
 			@echo $(GREEN)"- Compiled -"$(NONE)
- 
 clean	:
 			@echo $(RED) "Removing libft..." $(NONE)
 			@make clean -C libft/
@@ -47,7 +48,7 @@ clean	:
 
 fclean	:	clean
 			@echo $(RED) "Removing $(NAME)..." $(NONE)
-			@rm -f $(NAME) $(NAME)
+			@rm -f $(NAME) $(BONUS_NAME)
 			@rm -rf libft/libft.a
 
 

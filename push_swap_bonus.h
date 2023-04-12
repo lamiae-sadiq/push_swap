@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lsadiq <lsadiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/03 01:14:35 by lsadiq            #+#    #+#             */
-/*   Updated: 2023/04/11 21:49:30 by lsadiq           ###   ########.fr       */
+/*   Created: 2023/04/11 11:39:49 by lsadiq            #+#    #+#             */
+/*   Updated: 2023/04/11 21:45:04 by lsadiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#ifndef PUSH_SWAP_BONUS_H
+# define PUSH_SWAP_BONUS_H
 
 # include <stdlib.h>
 # include <stdio.h>
@@ -71,5 +71,6 @@ void	ft_assign_index(t_push **stack, int *arr, int size);
 void	ft_assignn_index(t_push **lst, int *arr);
 void	back_to_a(t_push **stack1, t_push **stack2, int size);
 void	fill_stack(int ac, char **av, t_push **stack);
+char	*get_next_line(int fd);
 
 #endif

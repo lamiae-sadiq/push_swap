@@ -6,7 +6,7 @@
 /*   By: lsadiq <lsadiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 12:01:37 by lsadiq            #+#    #+#             */
-/*   Updated: 2022/11/06 16:01:32 by lsadiq           ###   ########.fr       */
+/*   Updated: 2023/04/11 22:02:59 by lsadiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <fcntl.h>
-#include <stdint.h>
+# include <stdint.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -26,7 +26,7 @@ void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, size_t n);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
-size_t	ft_strlen(const char *s);
+int		ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
