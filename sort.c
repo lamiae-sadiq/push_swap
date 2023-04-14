@@ -6,7 +6,7 @@
 /*   By: lsadiq <lsadiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 18:08:34 by lsadiq            #+#    #+#             */
-/*   Updated: 2023/04/11 16:24:33 by lsadiq           ###   ########.fr       */
+/*   Updated: 2023/04/12 02:30:26 by lsadiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,9 @@ void	sorting(t_push **stack1, t_push **stack2, int ac)
 		else if (ac == 6)
 			sort_five(stack1, stack2);
 		else if (ac > 6 && ac <= 101)
-			sort_big_numbers(stack1, stack2, arr, 12);
+			sort_big_numbers(stack1, stack2, arr, 15);
 		else if (ac > 6 && ac <= 501)
-			sort_big_numbers(stack1, stack2, arr, 20);
+			sort_big_numbers(stack1, stack2, arr, 25);
 	}
 	free(arr);
 }

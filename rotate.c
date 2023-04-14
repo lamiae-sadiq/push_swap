@@ -6,7 +6,7 @@
 /*   By: lsadiq <lsadiq@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 16:05:17 by lsadiq            #+#    #+#             */
-/*   Updated: 2023/04/12 00:44:08 by lsadiq           ###   ########.fr       */
+/*   Updated: 2023/04/14 20:10:31 by lsadiq           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,14 @@ void	move_ra(t_push **stack, int flag)
 		write(1, "ra\n", 3);
 }
 
-void move_rb(t_push **stack, int flag)
+void	move_rb(t_push **stack, int flag)
 {
-	t_push *head;
-	t_push *new;
+	t_push	*head;
+	t_push	*new;
 
 	head = *stack;
 	if (head == NULL || head->next == NULL)
-		return;
+		return ;
 	*stack = head->next;
 	head->next = NULL;
 	new = *stack;
